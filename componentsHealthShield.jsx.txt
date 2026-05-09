@@ -1,0 +1,29 @@
+import { useState } from "react";
+export default function HealthShield() {
+const [risk, setRisk] = useState(null);
+const calculateRisk = () => {
+setRisk("Moderate Risk - 63%");
+};
+return (
+<div className="bg-[#111827] p-6 rounded-2xl">
+<h2 className="text-2xl font-bold mb-5">Personal Health Shield</h2>
+<input className="p-3 bg-gray-800 w-full mb-3 rounded"
+placeholder="Age" />
+<input className="p-3 bg-gray-800 w-full mb-3 rounded"
+placeholder="Location" />
+<input className="p-3 bg-gray-800 w-full mb-3 rounded"
+placeholder="Vaccination Status" />
+<button
+onClick={calculateRisk}
+className="bg-cyan-500 p-3 rounded w-full"
+>
+Analyze Risk
+</button>
+{risk && (
+<div className="mt-5 text-green-400 text-2xl">
+{risk}
+</div>
+)}
+</div>
+);
+}

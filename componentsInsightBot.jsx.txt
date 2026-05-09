@@ -1,0 +1,27 @@
+import { useState } from "react";
+export default function InsightBot() {
+const [question, setQuestion] = useState("");
+const [answer, setAnswer] = useState("");
+const askBot = async () => {
+setAnswer("East Bengaluru is currently the most vulnerable region.");
+};
+return (
+<div className="bg-[#111827] p-6 rounded-2xl">
+<h2 className="text-2xl font-bold mb-5">AI Health Insight Bot</h2>
+<input
+className="w-full p-3 rounded bg-gray-800"
+placeholder="Ask AI..."
+onChange={(e) => setQuestion(e.target.value)}
+/>
+<button
+className="mt-4 bg-cyan-500 px-5 py-3 rounded"
+onClick={askBot}
+>
+Ask
+</button>
+<div className="mt-5 text-cyan-300">
+{answer}
+</div>
+</div>
+);
+}

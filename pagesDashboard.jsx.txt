@@ -1,0 +1,35 @@
+import { motion } from "framer-motion";
+import LiveMap from "../maps/LiveMap";
+import RiskChart from "../charts/RiskChart";
+export default function Dashboard() {
+return (
+<div className="min-h-screen bg-[#050816] text-white p-6">
+<motion.h1
+initial={{ opacity: 0, y: -20 }}
+animate={{ opacity: 1, y: 0 }}
+className="text-5xl font-bold text-cyan-400 mb-8"
+>
+FLUVERSE 
+</motion.h1>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div className="bg-[#111827] p-6 rounded-2xl">
+<h2 className="text-xl font-bold">Live Flu Index</h2>
+<p className="text-5xl text-red-400 mt-4">78%</p>
+</div>
+<div className="bg-[#111827] p-6 rounded-2xl">
+<h2 className="text-xl font-bold">Vaccination Coverage</h2>
+<h2 className="text-xl font-bold">Vaccination Coverage</h2>
+<p className="text-5xl text-green-400 mt-4">64%</p>
+</div>
+<div className="bg-[#111827] p-6 rounded-2xl">
+<h2 className="text-xl font-bold">AI Risk Forecast</h2>
+<p className="text-5xl text-yellow-400 mt-4">HIGH</p>
+</div>
+</div>
+<div className="mt-10 grid md:grid-cols-2 gap-8">
+<LiveMap />
+<RiskChart />
+</div>
+</div>
+);
+}
